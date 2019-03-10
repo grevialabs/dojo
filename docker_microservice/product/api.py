@@ -1,4 +1,5 @@
 # Product Service
+import json 
 
 from flask import Flask
 from flask_restful import Resource, Api
@@ -8,12 +9,13 @@ api = Api(app)
 
 class Product(Resource):
     def get(self):
-        return {
+        ayam = {
             'product' : ['ayam',
                          'bebek',
                          'cacing',
                          ]
         }
+        return json.dumps(ayam)
 
 api.add_resource(Product,'/')
 
